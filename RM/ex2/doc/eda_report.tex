@@ -1,0 +1,95 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+\usepackage{graphicx}
+\usepackage{amsmath}
+
+\title{Exploratory Data Analysis Report}
+\author{Weipeng He}
+
+\begin{document}
+
+\maketitle
+
+\section{Hand size difference}
+\begin{center}
+  \includegraphics[width=.9\textwidth]{../handdiff}
+\end{center}
+
+\subsection{Writing hand v.s. Non-writing hand}
+\begin{itemize}
+  \item $Mean = 0.09$ (Insignificance difference);
+  \item $\sigma = 0.6$;
+  \item $kurtosis = 12.0$ (Leptokurtic).
+\end{itemize}
+
+\subsection{Right hand v.s. Left hand}
+\begin{itemize}
+  \item $Mean = 0.05$ (Insignificance difference);
+  \item $\sigma = 0.6$;
+  \item $kurtosis = 12.0$ (Leptokurtic).
+\end{itemize}
+
+\section{Pulse}
+\subsection{Pulse and Exercise}
+\begin{center}
+  \includegraphics[width=.9\textwidth]{../pulseexer}
+\end{center}
+
+\begin{itemize}
+  \item Frequently exercise : $Mean = 72.0, \sigma = 10.9$
+  \item Some exercise : $Mean = 76.2, \sigma = 11.7$
+  \item No exercise : $Mean = 76.8, \sigma = 14.1$
+\end{itemize}
+Students who frequently exercise have slightly lower pulse rate.
+
+\subsection{Pulse and Gender}
+\begin{center}
+  \includegraphics[width=.9\textwidth]{../pulsegender}
+\end{center}
+
+\begin{itemize}
+  \item Male : $Mean = 73.2, \sigma = 12.0$
+  \item Female : $Mean = 75.1, \sigma = 11.4$
+\end{itemize}
+Insignificant difference between male and female.
+
+\subsection{Pulse and Height}
+\begin{center}
+  \includegraphics[width=.9\textwidth]{../pulseheight}
+\end{center}
+
+\begin{itemize}
+  \item $Correlation = -0.08$.
+\end{itemize}
+Insignificant relation between pulse and height.
+
+\subsection{Pulse and Age}
+\begin{center}
+  \includegraphics[width=.9\textwidth]{../pulseage}
+\end{center}
+
+\begin{itemize}
+  \item $Correlation = -0.12$.
+\end{itemize}
+Insignificant relation between pulse and age.
+
+\section{All numerical data}
+Correlation matrix:
+\[
+  Corr(HandSize, Pulse, Height, Age) = \begin{bmatrix}
+    1.000 & -0.012 & \mathbf{0.614} & 0.102 \\
+    -0.012 & 1.000 & -0.085 & -0.012 \\
+    \mathbf{0.614} & -0.085 & 1.000 & -0.026 \\
+    0.102 & -0.012 & -0.026 & 1.000
+  \end{bmatrix}
+\]
+
+We see significant correlation between hand size and height.
+
+\begin{center}
+  \includegraphics[width=.9\textwidth]{../handheight}
+\end{center}
+
+\end{document}

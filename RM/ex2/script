@@ -1,0 +1,1 @@
+tail -n+2 survey.csv | sed 's/ //g' | sed 's/,/ /g' | sed 's/\<NA\>/N\/A/g' | sed 's/"//g' > survey
